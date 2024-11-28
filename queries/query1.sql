@@ -1,6 +1,4 @@
--- -------------------------------------------------------------------------------------------------
--- ---------------------- Choosing fordward:----------------------------------------------------------
--- -------------------------------------------------------------------------------------------------
+
 WITH minutes_played_condition AS (
     -- CTE Query to get all players with at least 450 minutes played
     SELECT  -- columns to get after join (3)
@@ -34,7 +32,6 @@ fordward_condition AS (
 		AND disc.yellow <= 4  -- Up to 4 yellow cards
 		AND (g.goals>=1 OR atte.total_attempts>10) -- At least one goal or one assisst
 )
-
 -- Final query to select players who meet the conditions
 SELECT player_name, position, minutes_played, yellow, red, goals, total_attempts -- columns to get (13)
 FROM fordward_condition -- From fordward_condition table (12)

@@ -1,6 +1,3 @@
--- -------------------------------------------------------------------------------------------------
--- ---------------------- Choosing goalkeeper:----------------------------------------------------------
--- -------------------------------------------------------------------------------------------------
 WITH minutes_played_condition AS (
     -- CTE Query to get all players with at least 450 minutes played
     SELECT  -- columns to get after join (3)
@@ -32,7 +29,6 @@ goalkeeper_condition AS (
 		AND gk.conceded<=10 -- At least one g4 balls recoverd or attempts
         AND gk.saved >10 -- At least 4 tackles won
 )
-
 -- Final query to select players who meet the conditions
 SELECT	player_name, -- columns to get (13)
 		position, 
